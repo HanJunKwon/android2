@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
         rb1.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                Toast.makeText(getApplicationContext(), rating, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), rating, Toast.LENGTH_SHORT).show();
             }
-        });
         });
     }
 }
