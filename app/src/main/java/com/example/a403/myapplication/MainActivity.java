@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     LinearLayout layout;
     Button b1;
-    CheckBox checkbox1;
+    CheckBox cb1;
     RatingBar rb1;
 
     @Override
@@ -23,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setButton();
+
+       setCheckBox();
+
+       // setRatingBar();
+    }
+
+    void setButton(){
         b1 =(Button)findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,23 +39,27 @@ public class MainActivity extends AppCompatActivity {
                         "Hello World", Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
-        checkbox1 = (CheckBox)findViewById(R.id.checkbox);
-        checkbox1.setOnClickListener(new View.OnClickListener() {
+    void setCheckBox(){
+        cb1 = (CheckBox) findViewById(R.id.check);
+        cb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkbox1.isChecked())
+                if(cb1.isChecked())
                     layout.setBackgroundColor(Color.BLUE);
                 else
                     layout.setBackgroundColor(Color.WHITE);
             }
         });
+    }
 
+    void setRatingBar(){
         rb1=(RatingBar)findViewById(R.id.ratingBar);
         rb1.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                //Toast.makeText(getApplicationContext(), rating, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), rating+"점입니다.", Toast.LENGTH_SHORT).show();
             }
         });
     }
